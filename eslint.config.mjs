@@ -33,6 +33,9 @@ const eslintConfig = [
       
       // Allow any type
       "@typescript-eslint/no-explicit-any": "warn",
+      
+      // Disable unescaped entities check (apostrophes in text)
+      "react/no-unescaped-entities": "off",
     },
   },
 ];
