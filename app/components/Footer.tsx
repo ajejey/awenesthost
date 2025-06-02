@@ -28,10 +28,9 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { name: 'Facebook', icon: Facebook, href: '#' },
-    { name: 'Instagram', icon: Instagram, href: '#' },
-    { name: 'Twitter', icon: Twitter, href: '#' },
-    { name: 'LinkedIn', icon: Linkedin, href: '#' },
+    { name: 'Facebook', icon: Facebook, href: 'https://www.facebook.com/AweNestHost/' },
+    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/awnesthost/' },
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/company/awenesthost/' },
   ];
 
   return (
@@ -130,6 +129,8 @@ const Footer = () => {
                 href={social.href}
                 aria-label={social.name}
                 className="text-slate-500 hover:text-amber-600 transition-colors duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <social.icon size={20} />
               </a>

@@ -18,7 +18,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 gsap.registerPlugin(ScrollTrigger);
-import { Home, Briefcase, Heart, TrendingUp, DollarSign, Award, Lightbulb, CheckCircle, UserCheck, Phone, Mail, MapPin, ArrowRight, Star, Layers, Zap, Users, ShieldCheck, Globe, Link, Linkedin, Instagram, X } from 'lucide-react';
+import { Home, Briefcase, Heart, TrendingUp, DollarSign, Award, Lightbulb, CheckCircle, UserCheck, Phone, Mail, MapPin, ArrowRight, Star, Layers, Zap, Users, ShieldCheck, Globe, Link, Linkedin, Instagram, X, Facebook } from 'lucide-react';
 
 // Define TypeScript interfaces for data structures for better type safety and readability
 interface Testimonial {
@@ -34,6 +34,12 @@ interface Testimonial {
  * and enhanced visual elements for investor pitches and full mobile responsiveness.
  */
 const AweNestHostLandingPageV5: React.FC = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
 //   useEffect(() => {
 //     const bird = document.getElementById('flying-bird');
 
@@ -116,8 +122,50 @@ const AweNestHostLandingPageV5: React.FC = () => {
         <a href="#list-with-us" className="bg-sky-500 hover:bg-sky-600 text-white font-semibold py-3 px-6 rounded-full shadow-md transition duration-300 hidden md:block">
           List With Us
         </a>
-        {/* Mobile menu icon (e.g., hamburger) would be implemented here for small screens */}
+        {/* Mobile Menu Button */}
+        <button
+          onClick={toggleMobileMenu}
+          className={`md:hidden text-gray-700 hover:text-sky-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500 ${isMobileMenuOpen ? 'hamburger-active' : ''}`}
+          aria-label="Open main menu"
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-menu-panel"
+        >
+          <div className="space-y-2">
+            <span className="block w-8 h-0.5 bg-current transition-all duration-300 ease-in-out"></span>
+            <span className="block w-8 h-0.5 bg-current transition-all duration-300 ease-in-out"></span>
+            <span className="block w-8 h-0.5 bg-current transition-all duration-300 ease-in-out"></span>
+          </div>
+        </button>
       </nav>
+
+      {/* Mobile Menu Panel (hidden by default, shown via JS and CSS) */}
+      <div
+        id="mobile-menu-panel"
+        className={`fixed inset-y-0 right-0 z-[51] w-full max-w-xs bg-white shadow-xl transform transition-transform duration-300 ease-in-out md:hidden ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+      >
+        <div className="p-5">
+          <div className="flex justify-end p-2">
+            <button
+              onClick={toggleMobileMenu}
+              className="text-gray-600 hover:text-gray-800"
+              aria-label="Close menu"
+            >
+              <X size={24} />
+            </button>
+          </div>
+          <a href="#about-us" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 px-3 text-base text-gray-700 hover:bg-gray-100 rounded">About Us</a>
+          <a href="#services" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 px-3 text-base text-gray-700 hover:bg-gray-100 rounded">Services</a>
+          <a href="#how-it-works" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 px-3 text-base text-gray-700 hover:bg-gray-100 rounded">How It Works</a>
+          <a href="#impact" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 px-3 text-base text-gray-700 hover:bg-gray-100 rounded">Impact</a>
+          <a href="#testimonials" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 px-3 text-base text-gray-700 hover:bg-gray-100 rounded">Testimonials</a>
+          <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 px-3 text-base text-gray-700 hover:bg-gray-100 rounded">Contact</a>
+          <div className="mt-4 pt-4 border-t border-gray-200">
+            <a href="#list-with-us" onClick={() => setIsMobileMenuOpen(false)} className="block text-center w-full bg-sky-500 hover:bg-sky-600 text-white font-semibold py-3 px-6 rounded-full shadow-md transition duration-300">
+              List With Us
+            </a>
+          </div>
+        </div>
+      </div>
 
       {/* Hero Section - Dynamic & Modern */}
       <section className="relative h-screen flex flex-col md:flex-row items-center justify-center bg-gradient-to-br from-sky-100 to-white pt-20 overflow-hidden">
@@ -176,6 +224,7 @@ const AweNestHostLandingPageV5: React.FC = () => {
             <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
               Our experienced team handles everything from marketing and guest relations to meticulous cleaning and maintenance. We ensure a hassle-free and rewarding experience for property owners, allowing you to enjoy passive income with complete peace of mind.
             </p>
+            <a href="#contact" className="bg-sky-500 hover:bg-sky-600 text-white font-semibold py-3 px-6 rounded-full shadow-md transition duration-300 inline-block mt-6">Learn More & Connect</a>
           </div>
         </div>
       </section>
@@ -207,6 +256,9 @@ const AweNestHostLandingPageV5: React.FC = () => {
               Enjoy passive income with complete peace of mind, knowing your property is in expert hands.
             </p>
           </div>
+        </div>
+        <div className="text-center mt-10">
+          <a href="#contact" className="bg-sky-500 hover:bg-sky-600 text-white font-semibold py-3 px-6 rounded-full shadow-md transition duration-300 inline-block">Partner with True Experts</a>
         </div>
       </section>
 
@@ -288,6 +340,9 @@ const AweNestHostLandingPageV5: React.FC = () => {
             </div>
           </div>
         </div>
+        <div className="text-center mt-12">
+          <a href="#contact" className="bg-sky-500 hover:bg-sky-600 text-white font-semibold py-3 px-6 rounded-full shadow-md transition duration-300 inline-block">Discuss Your Service Needs</a>
+        </div>
       </section>
 
       {/* Our Impact By The Numbers Section - Infographic Style */}
@@ -314,6 +369,9 @@ const AweNestHostLandingPageV5: React.FC = () => {
             <p className="text-6xl font-extrabold text-white mb-2">98%</p>
             <p className="text-lg text-white">Guest Satisfaction Rate</p>
           </div>
+        </div>
+        <div className="text-center mt-10">
+          <a href="#contact" className="bg-sky-500 hover:bg-sky-600 text-white font-semibold py-3 px-6 rounded-full shadow-md transition duration-300 inline-block">Achieve Results Like These</a>
         </div>
       </section>
 
@@ -454,6 +512,9 @@ const AweNestHostLandingPageV5: React.FC = () => {
             </div>
           </div>
         </div>
+        <div className="text-center mt-10">
+          <a href="#contact" className="bg-sky-500 hover:bg-sky-600 text-white font-semibold py-3 px-6 rounded-full shadow-md transition duration-300 inline-block">Begin Your Success Story</a>
+        </div>
       </section>
 
       {/* Testimonials Section - Carousel with larger quotes */}
@@ -494,6 +555,9 @@ const AweNestHostLandingPageV5: React.FC = () => {
             ))}
           </Swiper>
           <div className="swiper-pagination mt-8"></div>
+        </div>
+        <div className="text-center mt-10">
+          <a href="#contact" className="bg-sky-500 hover:bg-sky-600 text-white font-semibold py-3 px-6 rounded-full shadow-md transition duration-300 inline-block">Become Our Next Success Story</a>
         </div>
       </section>
 
@@ -552,14 +616,14 @@ const AweNestHostLandingPageV5: React.FC = () => {
             <div className="mt-8">
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Follow Us</h3>
               <div className="flex space-x-4">
-                <a href="#" className="text-sky-700 hover:text-sky-900 transition duration-300">
+                <a href="https://www.linkedin.com/company/awenesthost/" target="_blank" rel="noopener noreferrer" className="text-sky-700 hover:text-sky-900 transition duration-300">
                   <Linkedin size={28} />
                 </a>
-                <a href="#" className="text-sky-700 hover:text-sky-900 transition duration-300">
+                <a href="https://www.instagram.com/awnesthost/" target="_blank" rel="noopener noreferrer" className="text-sky-700 hover:text-sky-900 transition duration-300">
                   <Instagram size={28} />
                 </a>
-                <a href="#" className="text-sky-700 hover:text-sky-900 transition duration-300">
-                  <X size={28} />
+                <a href="https://www.facebook.com/AweNestHost/" target="_blank" rel="noopener noreferrer" className="text-sky-700 hover:text-sky-900 transition duration-300">
+                  <Facebook size={28} />
                 </a>
               </div>
             </div>
@@ -619,6 +683,17 @@ const AweNestHostLandingPageV5: React.FC = () => {
           &copy; {new Date().getFullYear()} AweNestHost™. All rights reserved.
         </div>
       </footer>
+      <style jsx>{`
+        .hamburger-active .space-y-2 span:nth-child(1) {
+          transform: translateY(10px) rotate(45deg);
+        }
+        .hamburger-active .space-y-2 span:nth-child(2) {
+          opacity: 0;
+        }
+        .hamburger-active .space-y-2 span:nth-child(3) {
+          transform: translateY(-10px) rotate(-45deg);
+        }
+      `}</style>
     </main>
   );
 };
