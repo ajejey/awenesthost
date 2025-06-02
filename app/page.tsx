@@ -18,7 +18,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 gsap.registerPlugin(ScrollTrigger);
-import { Home, Briefcase, Heart, TrendingUp, DollarSign, Award, Lightbulb, CheckCircle, UserCheck, Phone, Mail, MapPin, ArrowRight, Star, Layers, Zap, Users, ShieldCheck, Globe, Link, Linkedin, Instagram, X } from 'lucide-react';
+import { Home, Briefcase, Heart, TrendingUp, DollarSign, Award, Lightbulb, CheckCircle, UserCheck, Phone, Mail, MapPin, ArrowRight, Star, Layers, Zap, Users, ShieldCheck, Globe, Link, Linkedin, Instagram, X, Facebook } from 'lucide-react';
 
 // Define TypeScript interfaces for data structures for better type safety and readability
 interface Testimonial {
@@ -176,6 +176,7 @@ const AweNestHostLandingPageV5: React.FC = () => {
             <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
               Our experienced team handles everything from marketing and guest relations to meticulous cleaning and maintenance. We ensure a hassle-free and rewarding experience for property owners, allowing you to enjoy passive income with complete peace of mind.
             </p>
+            <a href="#contact" className="bg-sky-500 hover:bg-sky-600 text-white font-semibold py-3 px-6 rounded-full shadow-md transition duration-300 inline-block mt-6">Learn More & Connect</a>
           </div>
         </div>
       </section>
@@ -207,6 +208,9 @@ const AweNestHostLandingPageV5: React.FC = () => {
               Enjoy passive income with complete peace of mind, knowing your property is in expert hands.
             </p>
           </div>
+        </div>
+        <div className="text-center mt-10">
+          <a href="#contact" className="bg-sky-500 hover:bg-sky-600 text-white font-semibold py-3 px-6 rounded-full shadow-md transition duration-300 inline-block">Partner with True Experts</a>
         </div>
       </section>
 
@@ -288,6 +292,9 @@ const AweNestHostLandingPageV5: React.FC = () => {
             </div>
           </div>
         </div>
+        <div className="text-center mt-12">
+          <a href="#contact" className="bg-sky-500 hover:bg-sky-600 text-white font-semibold py-3 px-6 rounded-full shadow-md transition duration-300 inline-block">Discuss Your Service Needs</a>
+        </div>
       </section>
 
       {/* Our Impact By The Numbers Section - Infographic Style */}
@@ -314,6 +321,9 @@ const AweNestHostLandingPageV5: React.FC = () => {
             <p className="text-6xl font-extrabold text-white mb-2">98%</p>
             <p className="text-lg text-white">Guest Satisfaction Rate</p>
           </div>
+        </div>
+        <div className="text-center mt-10">
+          <a href="#contact" className="bg-sky-500 hover:bg-sky-600 text-white font-semibold py-3 px-6 rounded-full shadow-md transition duration-300 inline-block">Achieve Results Like These</a>
         </div>
       </section>
 
@@ -454,6 +464,9 @@ const AweNestHostLandingPageV5: React.FC = () => {
             </div>
           </div>
         </div>
+        <div className="text-center mt-10">
+          <a href="#contact" className="bg-sky-500 hover:bg-sky-600 text-white font-semibold py-3 px-6 rounded-full shadow-md transition duration-300 inline-block">Begin Your Success Story</a>
+        </div>
       </section>
 
       {/* Testimonials Section - Carousel with larger quotes */}
@@ -494,6 +507,9 @@ const AweNestHostLandingPageV5: React.FC = () => {
             ))}
           </Swiper>
           <div className="swiper-pagination mt-8"></div>
+        </div>
+        <div className="text-center mt-10">
+          <a href="#contact" className="bg-sky-500 hover:bg-sky-600 text-white font-semibold py-3 px-6 rounded-full shadow-md transition duration-300 inline-block">Become Our Next Success Story</a>
         </div>
       </section>
 
@@ -552,14 +568,14 @@ const AweNestHostLandingPageV5: React.FC = () => {
             <div className="mt-8">
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Follow Us</h3>
               <div className="flex space-x-4">
-                <a href="#" className="text-sky-700 hover:text-sky-900 transition duration-300">
+                <a href="https://www.linkedin.com/company/awenesthost/" target="_blank" rel="noopener noreferrer" className="text-sky-700 hover:text-sky-900 transition duration-300">
                   <Linkedin size={28} />
                 </a>
-                <a href="#" className="text-sky-700 hover:text-sky-900 transition duration-300">
+                <a href="https://www.instagram.com/awnesthost/" target="_blank" rel="noopener noreferrer" className="text-sky-700 hover:text-sky-900 transition duration-300">
                   <Instagram size={28} />
                 </a>
-                <a href="#" className="text-sky-700 hover:text-sky-900 transition duration-300">
-                  <X size={28} />
+                <a href="https://www.facebook.com/AweNestHost/" target="_blank" rel="noopener noreferrer" className="text-sky-700 hover:text-sky-900 transition duration-300">
+                  <Facebook size={28} />
                 </a>
               </div>
             </div>
