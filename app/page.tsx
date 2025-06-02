@@ -34,6 +34,12 @@ interface Testimonial {
  * and enhanced visual elements for investor pitches and full mobile responsiveness.
  */
 const AweNestHostLandingPageV5: React.FC = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
 //   useEffect(() => {
 //     const bird = document.getElementById('flying-bird');
 
@@ -116,8 +122,50 @@ const AweNestHostLandingPageV5: React.FC = () => {
         <a href="#list-with-us" className="bg-sky-500 hover:bg-sky-600 text-white font-semibold py-3 px-6 rounded-full shadow-md transition duration-300 hidden md:block">
           List With Us
         </a>
-        {/* Mobile menu icon (e.g., hamburger) would be implemented here for small screens */}
+        {/* Mobile Menu Button */}
+        <button
+          onClick={toggleMobileMenu}
+          className={`md:hidden text-gray-700 hover:text-sky-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500 ${isMobileMenuOpen ? 'hamburger-active' : ''}`}
+          aria-label="Open main menu"
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-menu-panel"
+        >
+          <div className="space-y-2">
+            <span className="block w-8 h-0.5 bg-current transition-all duration-300 ease-in-out"></span>
+            <span className="block w-8 h-0.5 bg-current transition-all duration-300 ease-in-out"></span>
+            <span className="block w-8 h-0.5 bg-current transition-all duration-300 ease-in-out"></span>
+          </div>
+        </button>
       </nav>
+
+      {/* Mobile Menu Panel (hidden by default, shown via JS and CSS) */}
+      <div
+        id="mobile-menu-panel"
+        className={`fixed inset-y-0 right-0 z-[51] w-full max-w-xs bg-white shadow-xl transform transition-transform duration-300 ease-in-out md:hidden ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+      >
+        <div className="p-5">
+          <div className="flex justify-end p-2">
+            <button
+              onClick={toggleMobileMenu}
+              className="text-gray-600 hover:text-gray-800"
+              aria-label="Close menu"
+            >
+              <X size={24} />
+            </button>
+          </div>
+          <a href="#about-us" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 px-3 text-base text-gray-700 hover:bg-gray-100 rounded">About Us</a>
+          <a href="#services" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 px-3 text-base text-gray-700 hover:bg-gray-100 rounded">Services</a>
+          <a href="#how-it-works" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 px-3 text-base text-gray-700 hover:bg-gray-100 rounded">How It Works</a>
+          <a href="#impact" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 px-3 text-base text-gray-700 hover:bg-gray-100 rounded">Impact</a>
+          <a href="#testimonials" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 px-3 text-base text-gray-700 hover:bg-gray-100 rounded">Testimonials</a>
+          <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 px-3 text-base text-gray-700 hover:bg-gray-100 rounded">Contact</a>
+          <div className="mt-4 pt-4 border-t border-gray-200">
+            <a href="#list-with-us" onClick={() => setIsMobileMenuOpen(false)} className="block text-center w-full bg-sky-500 hover:bg-sky-600 text-white font-semibold py-3 px-6 rounded-full shadow-md transition duration-300">
+              List With Us
+            </a>
+          </div>
+        </div>
+      </div>
 
       {/* Hero Section - Dynamic & Modern */}
       <section className="relative h-screen flex flex-col md:flex-row items-center justify-center bg-gradient-to-br from-sky-100 to-white pt-20 overflow-hidden">
@@ -635,6 +683,17 @@ const AweNestHostLandingPageV5: React.FC = () => {
           &copy; {new Date().getFullYear()} AweNestHost™. All rights reserved.
         </div>
       </footer>
+      <style jsx>{`
+        .hamburger-active .space-y-2 span:nth-child(1) {
+          transform: translateY(10px) rotate(45deg);
+        }
+        .hamburger-active .space-y-2 span:nth-child(2) {
+          opacity: 0;
+        }
+        .hamburger-active .space-y-2 span:nth-child(3) {
+          transform: translateY(-10px) rotate(-45deg);
+        }
+      `}</style>
     </main>
   );
 };
