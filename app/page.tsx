@@ -543,7 +543,8 @@ const AweNestHostLandingPageV5: React.FC = () => {
             <div>
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">Contact Information</h3>
               <div className="space-y-4 text-gray-700 text-lg">
-                <p className="flex items-center"><MapPin size={20} className="mr-2 text-sky-700" /> [Your Business Address Here - e.g., 123 Property Lane, Bengaluru, India]</p>
+                <p className="font-semibold text-gray-800">CSAK Awenest Property Solutions Private Limited</p>
+                <p className="flex items-center"><MapPin size={20} className="mr-2 text-sky-700" /> 5-127, Budhanagar Road6, PMC, Hyderabad, Telangana - 500098</p>
                 <p className="flex items-center"><a href="mailto:info@awenesthost.com" className="text-sky-700 hover:underline flex items-center"><Mail size={20} className="mr-2" />info@awenesthost.com</a></p>
                 <p className="flex items-center"><a href="tel:+918919823564" className="text-sky-700 hover:underline flex items-center"><Phone size={20} className="mr-2" />(+91) 891-982-3564</a></p>
               </div>

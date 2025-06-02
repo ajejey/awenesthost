@@ -106,6 +106,7 @@ const Footer = () => {
               ))}
             </ul>
             <h4 className="text-lg font-semibold text-slate-800 mb-3">Contacts</h4>
+            <p className="text-sm text-slate-700 mb-2">CSAK Awenest Property Solutions Private Limited</p>
             <a href="mailto:info@awenesthost.com" className="flex items-center text-sm text-slate-600 hover:text-amber-600 transition-colors duration-300 mb-2">
               <Mail size={16} className="mr-2 text-amber-500" />
               info@awenesthost.com
